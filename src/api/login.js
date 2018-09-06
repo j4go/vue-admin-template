@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function login(username, password) {
   return request({
-    url: '/user/login',
+    url: '/api/user/login',
     method: 'post',
     data: {
       username,
@@ -11,9 +11,11 @@ export function login(username, password) {
   })
 }
 
+// {"code":20000,"data":{"roles":["admin"],"name":"admin",
+// "avatar":"https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif"}}
 export function getInfo(token) {
   return request({
-    url: '/user/info',
+    url: '/api/user/info',
     method: 'get',
     params: { token }
   })
